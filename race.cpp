@@ -6,6 +6,7 @@
 Race::Race(){
 	const static int NUM_HORSES = 5;
 	const int TRACK_LENGTH = 15;
+	Horse horses[NUM_HORSES]; 
 } 
 
 void start(){
