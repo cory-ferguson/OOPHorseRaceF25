@@ -4,9 +4,15 @@
 
 Horse::Horse(){
 	int position;
-	int id = horses[NUM_HORSES];
+	const static int NUM_HORSES = 5;
+	int index = horses[NUM_HORSES];
 	int trackLength = 15;
 }
+
+void init(index, trackLength){
+	int index = horses[NUM_HORSES];
+	int trackLength = 15;
+}// end init
 
 void Horse::advance(){
 	int coin = dist(rd);
@@ -18,9 +24,9 @@ void Horse::printLane(){
 
 bool Horse::isWinner(){
 	bool result = false;
-	if(horses[NUM_HORSES] == TRACK_LENGTH){
+	if(horses[NUM_HORSES] == trackLength){
 		result = true;
-		std::cout << "Horse "  << horseNum << " won!" << std::endl;
+		std::cout << "Horse "  << index << " won!" << std::endl;
 	}// end if
-	return result 
+	return result; 
 }// end isWinner
