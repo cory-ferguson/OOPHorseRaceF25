@@ -1,6 +1,7 @@
 #include <iostream>
 #include "horse.h"
 #include "race.h"
+#include <random>
 
 int main(){
 	std::random_device rd;

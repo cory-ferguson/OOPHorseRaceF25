@@ -3,30 +3,34 @@
 #include "horse.h"
 
 Horse::Horse(){
-	int position;
-	const static int NUM_HORSES = 5;
-	int index = horses[NUM_HORSES];
+	int position = 0;
 	int trackLength = 15;
 }
 
-void init(index, trackLength){
-	int index = horses[NUM_HORSES];
-	int trackLength = 15;
+void Horse::init(int index, int trackLength){
+	Horse::index = index;
+	Horse::trackLength = trackLength;
 }// end init
 
 void Horse::advance(){
-	int coin = dist(rd);
-	horses[NUM_HORSES] += coin;
+	int coin = rand() %2;
+	position += coin;
 }// end advance
 
 void Horse::printLane(){
+	for(int i = 0; i < trackLength; i++){
+		if (i == position){
+			std::cout << index;
+		} else {
+			std::cout << ".";
+		}// end if
+	}// end for
 }// end printLane
 
 bool Horse::isWinner(){
 	bool result = false;
-	if(horses[NUM_HORSES] == trackLength){
+	if(position >= trackLength){
 		result = true;
-		std::cout << "Horse "  << index << " won!" << std::endl;
 	}// end if
 	return result; 
 }// end isWinner

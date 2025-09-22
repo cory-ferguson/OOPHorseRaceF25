@@ -4,12 +4,15 @@
 #include "horse.h"
 
 Race::Race(){
-	const static int NUM_HORSES = 5;
-	const int TRACK_LENGTH = 15;
-	Horse horses[NUM_HORSES]; 
+	// initialize all the horses
+	for (int i = 0; i < NUM_HORSES; i++){
+		horses[i].init();
+	} // end for
+	
 } 
 
-void start(){
+
+void Race::start(){
 	bool keepGoing = true;
 
 	while keepGoing{
