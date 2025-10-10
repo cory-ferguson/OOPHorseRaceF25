@@ -6,7 +6,7 @@
 Race::Race(){
 	// initialize all the horses
 	for (int i = 0; i < NUM_HORSES; i++){
-		horses[i].init();
+		horses[i].init(i, 15);
 	} // end for
 	
 } 
@@ -15,12 +15,12 @@ Race::Race(){
 void Race::start(){
 	bool keepGoing = true;
 
-	while keepGoing{
+	while(keepGoing){
 		for(int horseNum = 0; horseNum < NUM_HORSES; horseNum++){
-			Horse c;
-			c.advance();
-			c.printLane();
-			if (c.isWinner){
+			horses[horseNum].advance();
+			horses[horseNum].printLane();
+			if (horses[horseNum].isWinner()){
+				std::cout << "Horse " << horseNum << " won!";
 				keepGoing = false;
 			}// end if
 		}// end for

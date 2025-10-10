@@ -1,6 +1,7 @@
 #ifndef RACE_H_EXISTS
-#define HORSE_H_EXISTS
+#define RACE_H
 #include <string>
+#include <iostream>
 #include "horse.h"
 
 class Race {
